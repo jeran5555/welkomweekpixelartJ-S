@@ -1,6 +1,6 @@
 
 // setting up canvas and constants
-const rows = 25;
+const rows = 60;
 const columns = 25;
 const cell_size = 20; // 20x20 grid
 
