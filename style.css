@@ -26,13 +26,18 @@ canvas {
 }
 
 .swatch-container {
-	width: 540px;
+	width: 700px;
 	padding: 5px 0px;
 	border: #89b 1px solid;
 	border-radius: 8px;
 	overflow-wrap: normal;
 	text-align: left;
 	overflow: hidden;
+	  display: flex;           /* Flexbox gebruiken */
+    flex-wrap: wrap;         /* Nieuwe rij als het niet past */
+    gap: 10px;               /* Ruimte tussen vakjes */
+    justify-content: flex-start; /* Vakjes links uitlijnen */
+
 }
 
 .swatch-color {
@@ -45,17 +50,39 @@ canvas {
 	margin: 15px 15px;
 	float: left;
 	cursor: pointer;
+	  width: 50px;
+    height: 50px;
+    border: 2px solid #212121;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .info-text {
 	margin-left: 20px;
 	font: 15px Arial, sans-serif;
 	color: #89b;
+	
+    display: none;
+
 }
 
 .eraser {
 	background: white;
 }
 
+#reset-button {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: #ddd;
+}
 
 

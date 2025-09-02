@@ -88,39 +88,52 @@ class Cell {
 
 }
 
+// class Swatch {
+//     constructor(color_array) {
+//         this.colors = color_array; // GEEN extra "#ffffff" toevoegen
+//         this.color = color_array[0]; // standaard actieve kleur
+//     }
+
+//     setSwatchView() {
+//         const swatches = document.getElementsByClassName("swatch-color");
+//         for (let i = 0; i < swatches.length; i++) {
+//             // Alleen bestaande kleuren toewijzen
+//             if (this.colors[i]) {
+//                 swatches[i].style.background = this.colors[i];
+
+//                 // Klik om kleur te selecteren
+//                 swatches[i].addEventListener("click", () => {
+//                     this.color = this.colors[i];
+//                 });
+
+//                 // Contextmenu verwijderen (kleur kan niet aangepast worden)
+//             }
+//         }
+//     }
+// }
 class Swatch {
-	constructor(color_array) {
-		this.colors = ["#ffffff", ...color_array];
-		this.color = color_array[0];
-	}
+    constructor(color_array) {
+        this.colors = color_array; // alleen de echte kleuren
+        this.color = color_array[0]; // standaard geselecteerde kleur
+        this.eraserColor = "#ffffff"; // gumkleur
+    }
 
-	setSwatchView() {
-		var l = document.getElementsByClassName("swatch-color");
-		for(let i=0; i<l.length; i++) {
-			l[i].style.background = this.colors[i];
-			
-			// Select color event
-			l[i].addEventListener("click", (e) => {
-				this.color = this.colors[i];
-			});
-
-			// Change color event
-			l[i].addEventListener("contextmenu", (e) => {
-				e.preventDefault();
-				let _color = window
-					.prompt("Enter color hex code (e.g. #fcba03):");
-				
-				if( !(/^#[0-9A-Fa-f]{6}$/i.test(_color) || 
-					/^#[0-9A-Fa-f]{3}$/i.test(_color)) ) {
-					window.alert("Invalid hex code given.")
-				}
-				else {
-					this.colors[i] = _color;
-					this.color = this.colors[i];
-					l[i].style.background = this.colors[i];
-				}
-
-			})
-		}
-	}
+    setSwatchView() {
+        const swatches = document.getElementsByClassName("swatch-color");
+        for (let i = 0; i < swatches.length; i++) {
+            if (i === 0) {
+                // Eerste vak = gum
+                swatches[i].style.background = this.eraserColor;
+                swatches[i].addEventListener("click", () => {
+                    this.color = this.eraserColor;
+                });
+            } else if (this.colors[i - 1]) {
+                // overige kleuren
+                swatches[i].style.background = this.colors[i - 1];
+                swatches[i].addEventListener("click", () => {
+                    this.color = this.colors[i - 1];
+                });
+            }
+        }
+    }
 }
