@@ -11,10 +11,17 @@ background-image: url("Mystical-Landscape-Game-Background-by-Gaming-Backgrounds-
 }
 
 canvas {
-	margin: 20px auto;
-	border: rgb(0, 0, 0) 20px solid;
-	border-radius: 24px;
-	background-color: #183c00;
+	
+	/* margin: 20px auto; */
+	/* border: rgb(0, 0, 0) 20px solid;
+	border-radius: 24px; */
+	/* background-color: #183c00; */
+	 border: 2px solid #000;
+    border-radius: 24px;
+    display: block;
+    margin: 20px auto;
+    background-color: #75816B
+	
 }
 
 #container {
@@ -26,9 +33,9 @@ canvas {
 }
 
 .swatch-container {
-	width: 700px;
+	width: 1350px;
 	padding: 5px 0px;
-	border: #89b 1px solid;
+	border: rgb(0, 0, 0) 1px solid;
 	border-radius: 8px;
 	overflow-wrap: normal;
 	text-align: left;
@@ -85,4 +92,33 @@ canvas {
     background-color: #ddd;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #75816B;
+  display: flex;
+  justify-content: center;
+    border-radius: 20px;
+	border: 2px solid;
+	width: 400px;
+}
 
+ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #ccd4c6;
+}
+
+.bar{
+
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+}
