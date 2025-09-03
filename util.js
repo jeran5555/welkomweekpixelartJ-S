@@ -88,29 +88,6 @@ class Cell {
 
 }
 
-// class Swatch {
-//     constructor(color_array) {
-//         this.colors = color_array; // GEEN extra "#ffffff" toevoegen
-//         this.color = color_array[0]; // standaard actieve kleur
-//     }
-
-//     setSwatchView() {
-//         const swatches = document.getElementsByClassName("swatch-color");
-//         for (let i = 0; i < swatches.length; i++) {
-//             // Alleen bestaande kleuren toewijzen
-//             if (this.colors[i]) {
-//                 swatches[i].style.background = this.colors[i];
-
-//                 // Klik om kleur te selecteren
-//                 swatches[i].addEventListener("click", () => {
-//                     this.color = this.colors[i];
-//                 });
-
-//                 // Contextmenu verwijderen (kleur kan niet aangepast worden)
-//             }
-//         }
-//     }
-// }
 class Swatch {
     constructor(color_array) {
         this.colors = color_array; // alleen de echte kleuren
